@@ -8,6 +8,8 @@ var jade = require('jade');
 var index = fs.readFileSync('./index.jade','utf8');
 var style = fs.readFileSync('./style.css','utf8');
 
+var str = "str";
+
 var server = http.createServer();
 server.on('request',doRequest);
 server.listen(PORT);
@@ -25,7 +27,7 @@ function doRequest(req, res){
             res.end();
             break;
 
-        case '/style.css': //For Style Sheet
+        case '/style.css': 
             res.setHeader('Content-Type','text/css');
             res.write(style);
             res.end();
